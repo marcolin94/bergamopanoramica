@@ -102,7 +102,7 @@ function bergamopanoramica_widgets_init() {
 add_action( 'widgets_init', 'bergamopanoramica_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue scripts.
  */
 function bergamopanoramica_scripts() {
 	wp_enqueue_style( 'bergamopanoramica-style', get_stylesheet_uri() );
@@ -111,12 +111,25 @@ function bergamopanoramica_scripts() {
 
 	wp_enqueue_script( 'bergamopanoramica-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'bergamopanoramica-boostrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20151215', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bergamopanoramica_scripts' );
 
+/**
+ * Enqueue styles.
+ */
+function bergamopanoramica_style() {
+
+	wp_enqueue_style( 'bergamopanoramica-boostrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '20151215', true );
+
+	wp_enqueue_style( 'bergamopanoramica-animation', get_template_directory_uri() . '/css/animate.css', array(), '20151215', true );
+
+}
+add_action('wp_enqueue_scripts','bergamopanoramica_style');
 /**
  * Implement the Custom Header feature.
  */
