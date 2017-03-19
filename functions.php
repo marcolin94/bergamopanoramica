@@ -124,7 +124,7 @@ add_action( 'wp_enqueue_scripts', 'bergamopanoramica_scripts' );
  */
 function bergamopanoramica_style() {
 
-	wp_enqueue_style( 'bergamopanoramica-boostrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '20151215', true );
+	wp_enqueue_style( 'bergamopanoramica-boostrap-style', get_template_directory_uri() . '/css/bootstrap.min.css');
 
 	wp_enqueue_style( 'bergamopanoramica-animation', get_template_directory_uri() . '/css/animate.css', array(), '20151215', true );
 
